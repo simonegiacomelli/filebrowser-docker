@@ -7,10 +7,6 @@ RUN mkdir -p bin
 RUN curl -s -L https://github.com/filebrowser/filebrowser/releases/download/v2.22.4/linux-amd64-filebrowser.tar.gz | tar -xz -C bin
 WORKDIR /repo/db
 
-CMD ../bin/filebrowser config init && \
-    ../bin/filebrowser config set -p 3070 && \
-    ../bin/filebrowser config set -a 0.0.0.0 && \
-    ../bin/filebrowser config set -r /repo/www-root &&\
-    ../bin/filebrowser users add admin admin && \
-    echo initial setup ok ; \
+CMD timeout 1s ../bin/filebrowser -p 3070 -a 0.0.0.0  -r /repo/www-root ; \
+    echo setup ok && \
     ../bin/filebrowser
