@@ -1,0 +1,18 @@
+version: '3.2'
+services:
+  filebrowser:
+#    image: filebrowser/filebrowser:v2.22.4-s6
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    container_name: filebrowser-container
+    volumes:
+    # host/folder:container/folder
+      - ./db:/repo/db
+      - ./www-root:/repo/www-root
+#      - ./.filebrowser.json:/.filebrowser.json
+#    working_dir: /docker/repo
+#    command: bash -c ./docker-reboot.sh
+    ports:
+      - "3070:3070"
