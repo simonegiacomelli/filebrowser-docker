@@ -12,7 +12,7 @@ http://localhost {
         file_server browse
     }
 
-    route * {
+    route /hello-caddy/* {
         respond "hello hello!"
     }
 }
