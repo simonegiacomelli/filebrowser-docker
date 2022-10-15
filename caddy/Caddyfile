@@ -12,5 +12,8 @@ http://localhost {
         file_server browse
     }
 
+    route * {
+        respond "hello hello!"
+    }
 }
 
