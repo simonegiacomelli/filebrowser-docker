@@ -1,9 +1,10 @@
 {
   auto_https off
-}
+}  
+ 
 
-http://localhost {
-
+http:// {
+    #bind 0.0.0.0
 
     route /shared/* {
         encode gzip
@@ -13,7 +14,10 @@ http://localhost {
     }
 
     route /hello-caddy/* {
-        respond "hello hello!"
+        respond "\n\nhello hello!\n\n"
+    }
+    route /caddy-hello/* {
+	respond "\n\nhello hello2!\n\n"
     }
 }
 

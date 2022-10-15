@@ -7,6 +7,8 @@ cd $DIR
 docker stop filebrowser-caddy-container
 docker rm filebrowser-caddy-container
 
+
+
 docker run -d -p 3071:80 \
     -v $PWD/Caddyfile:/etc/caddy/Caddyfile \
     -v $PWD/../www-root/shared:/usr/share/caddy \
