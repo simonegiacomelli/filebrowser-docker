@@ -1,0 +1,16 @@
+{
+  auto_https off
+}
+
+http://localhost {
+
+
+    route /shared/* {
+        encode gzip
+        uri strip_prefix /shared
+        root * /usr/share/caddy
+        file_server browse
+    }
+
+}
+
