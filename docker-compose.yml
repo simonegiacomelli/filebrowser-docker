@@ -11,6 +11,7 @@ services:
     # host/folder:container/folder
       - ./db:/repo/db
       - ./www-root:/repo/www-root
+      - /root/respirix/cardiospire_visual_analysis/data:/repo/www-root/respirix-data
 #      - ./.filebrowser.json:/.filebrowser.json
 #    working_dir: /docker/repo
 #    command: bash -c ./docker-reboot.sh

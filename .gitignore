@@ -1,3 +1,4 @@
 .idea
 www-root
 db
+caddy/data
